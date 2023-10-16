@@ -1,9 +1,0 @@
-body {
-  font-size: 15px;
-}
-body p {
-  background-color: red;
-}
-body p:hover {
-  background-color: blue;
-}
