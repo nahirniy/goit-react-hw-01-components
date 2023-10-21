@@ -1,6 +1,6 @@
 import css from './Statistics.module.css';
 
-export const Statistics = ({ title = 'Title is undefined', stats }) => {
+export const Statistics = ({ title, stats }) => {
   const color = function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215)
       .toString(16)
@@ -9,7 +9,7 @@ export const Statistics = ({ title = 'Title is undefined', stats }) => {
 
   return (
     <section className={css.statistics}>
-      <h2 className={css.title}>{title}</h2>
+      {title && <h2 className={css.title}>{title}</h2>}
       <ul className={css.stat_list}>
         {stats.map(({ id, label, percentage }) => {
           return (

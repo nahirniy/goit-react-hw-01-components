@@ -14,13 +14,11 @@ export const TransactionHistory = ({ items }) => {
       <tbody className={css.transaction_body}>
         {items.map(({ id, type, amount, currency }) => {
           return (
-            <TransactionHistoryItem
-              key={id}
-              type={type}
-              amount={amount}
-              currency={currency}
-              id={id}
-            />
+            <tr key={id} id={id}>
+              <td>{type}</td>
+              <td>{amount}</td>
+              <td>{currency}</td>
+            </tr>
           );
         })}
       </tbody>
@@ -28,12 +26,12 @@ export const TransactionHistory = ({ items }) => {
   );
 };
 
-const TransactionHistoryItem = ({ type, amount, currency, id }) => {
-  return (
-    <tr id={id}>
-      <td>{type}</td>
-      <td>{amount}</td>
-      <td>{currency}</td>
-    </tr>
-  );
-};
+// const TransactionHistoryItem = ({ type, amount, currency, id }) => {
+//   return (
+//     <tr id={id}>
+//       <td>{type}</td>
+//       <td>{amount}</td>
+//       <td>{currency}</td>
+//     </tr>
+//   );
+// };
